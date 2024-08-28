@@ -1,0 +1,37 @@
+.feed-form-container {
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px; 
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.feed-form-item {
+  margin-bottom: 16px; 
+
+}
+
+.feed-form-input {
+  border-radius: 8px; 
+  height: 40px; 
+  border: 1px solid #d9d9d9;
+  transition: border-color 0.3s;
+  margin: 10px;
+}
+
+.feed-form-input:focus {
+  border-color: #40a9ff; 
+  box-shadow: 0 0 5px rgba(64, 169, 255, 0.5);
+}
+
+.feed-form-checkbox {
+  margin-top: 8px; 
+}
+
+.feed-form-label {
+  font-weight: bold; 
+  color: #333;
+}
+
+.feed-form-proxy-item {
+ margin: 10px;
+}

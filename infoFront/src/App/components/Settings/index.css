@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+.setting-form {
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0.5, 0, 0.4);
+}
+
+.setting-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.setting-form .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.setting-form .ant-input,
+.setting-form .ant-input-number {
+  height: 40px;
+  font-size: 20px;
+}
+
+.setting-form .ant-btn {
+  font-size: 20px;
+}
+
+.setting-form .custom-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.setting-form .ant-collapse-header {
+  font-size: 20px;
+}
+
+.setting-form .ant-collapse-content {
+  padding: 20px;
+}
