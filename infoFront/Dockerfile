@@ -22,9 +22,6 @@ FROM nginx:alpine
 # Копируем собранные файлы из предыдущего этапа
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
 
-# Копируем конфигурацию Nginx (если требуется)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
 # Указываем порт, который будет прослушиваться
 EXPOSE 80
 

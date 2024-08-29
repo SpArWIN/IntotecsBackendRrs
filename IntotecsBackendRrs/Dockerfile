@@ -3,8 +3,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 80  # HTTP
-EXPOSE 443 # HTTPS
+EXPOSE 8080
+EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -14,7 +14,6 @@ COPY ["IntotecsBackendRrs.DOMAIN/IntotecsBackendRrs.DOMAIN.csproj", "IntotecsBac
 COPY ["IntotecsBackendRrs.SERVICE/IntotecsBackendRrs.SERVICE.csproj", "IntotecsBackendRrs.SERVICE/"]
 RUN dotnet restore "./IntotecsBackendRrs/./IntotecsBackendRrs.csproj"
 COPY . .
-
 WORKDIR "/src/IntotecsBackendRrs"
 RUN dotnet build "./IntotecsBackendRrs.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
