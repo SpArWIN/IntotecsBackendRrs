@@ -1,15 +1,5 @@
+
 services:
-  # infofront:
-  #   image: frontend
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-
-  #   ports:
-  #     - "8080:80" # Пробрасываем порт 80 контейнера на порт 8080 хоста
-  #   networks:
-  #     - app-network
-
   backend:
     image: intotecsbackendrrs
     build:
@@ -23,10 +13,13 @@ services:
     volumes:
       - ../nginx.conf:/etc/nginx/conf.d/default.conf # Подключаем конфигурацию Nginx
       - ./dist:/usr/share/nginx/html
+      - ./certificate_ca.key/certificate_ca.crt:/etc/nginx/certs/certificate_ca.crt
+      - ./private.key/certificate.key:/etc/nginx/certs/private.key 
+      - ./certificate.crt/certificate.crt:/etc/nginx/certs/certificate.crt 
     ports:
-      - "80:80" # Открываем порт 80 для внешнего доступа
+      - "80:80"  # Открываем порт 80 для внешнего доступа
+      - "443:443"  # Открываем порт 443 для HTTPS
     depends_on:
-      # - infofront
       - backend
     networks:
       - app-network
